@@ -40,6 +40,31 @@ namespace ClassRoom
             set { _dayOfBirth = value; }
         }
 
+        public string Season()
+        {
+            if (MonthOfBirth == 12 || MonthOfBirth == 1 || MonthOfBirth == 2)
+            {
+                return "Winter";
+            }
+
+            else if (MonthOfBirth == 3 || MonthOfBirth == 4 || MonthOfBirth == 5)
+            {
+                return "Spring";
+            }
+
+            else if (MonthOfBirth == 6 || MonthOfBirth == 7 || MonthOfBirth == 8)
+            {
+                return "Summer";
+            }
+
+            else if (MonthOfBirth == 9 || MonthOfBirth == 10 || MonthOfBirth == 11)
+            {
+                return "Fall";
+            }
+
+            return "";
+        }
+
         //Methode
         public override string ToString()
         {

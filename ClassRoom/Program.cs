@@ -10,29 +10,36 @@ namespace ClassRoom
     {
         static void Main(string[] args)
         {
-            ClassRoom ClassRoom = new ClassRoom();
+            ClassRoom CRoom = new ClassRoom();
 
             Students s1 = new Students("Ahmed Metin Donmez", 8, 29);
             Students s2 = new Students("Hassan Raza Hussain", 4, 20);
             Students s3 = new Students("Chad Thundercock", 9, 11);
 
-            ClassRoom.SemesterStart = DateTime.Parse ("2017, 8, 28");
-            ClassRoom.ClassName = "3A";
+            CRoom.SemesterStart = DateTime.Parse ("2017, 8, 28");
+            CRoom.ClassName = "3A";
 
-            List<Students> StudentsList = new List<Students>
-            {
-                s1,
-                s2,
-                s3
-            };
+            CRoom.ClassList.Add(s1);
+            CRoom.ClassList.Add(s2);
+            CRoom.ClassList.Add(s3);
 
-            Console.WriteLine(ClassRoom.ClassName);
-            Console.WriteLine(ClassRoom.SemesterStart);
+            Console.WriteLine("Name of the class");
+            Console.WriteLine(CRoom.ClassName);
+            Console.WriteLine("");
+            Console.WriteLine("The semester starts at");
+            Console.WriteLine(CRoom.SemesterStart);
+            Console.WriteLine("");
+            Console.WriteLine("The participating students are");
 
-            foreach (var students in StudentsList)
+            foreach (var students in CRoom.ClassList)
             {
                 Console.WriteLine(students);
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("Number of birthdays for each season");
+
+            CRoom.Season();
 
             Console.ReadKey();
         }
